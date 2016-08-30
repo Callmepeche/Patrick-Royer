@@ -1,9 +1,9 @@
 
-public class ClosedShape implements Compareable <ClosedShape>
+public class ClosedShape implements Comparable <ClosedShape>
 {
   private double area;
   private final double TOLERANCE = 0.00001;
-  private int compareTo(ClosedShape other);
+  public int compareTo(ClosedShape other)
   
   {
      double a = (double)this.getArea(); 
@@ -16,6 +16,7 @@ public class ClosedShape implements Compareable <ClosedShape>
      }
      else
      {
+       return 1;
      }
     
   }
@@ -39,7 +40,7 @@ public class ClosedShape implements Compareable <ClosedShape>
    {
       String result;
       if (area == 0)
-         result = "The area of the shape is " + this.area ;
+         result = "The area of the shape is " + area.getArea ;
       else
             result = "The area of the two shapes are the same";
          
