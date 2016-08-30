@@ -1,49 +1,53 @@
-public class Triangle extends ClosedShape
+
+public class ClosedShape implements Comparable <ClosedShape>
 {
-  private double a, b;
+  private double area;
+  private final double TOLERANCE = 0.00001;
+  public int compareTo(ClosedShape other)
+  
+  {
+     double a = (double)this.getArea(); 
+     double b = (double)other.getArea(); 
+     double c = a - b;
 
-public Triangle(double a, double b)
-{
-    this.a = a;
-    this.b = b;
+     if (c <= TOLERANCE && c >= 0)
+     {
+       return 0;
+     }
+     else
+     {
+       return 1;
+     }
+    
+  }
+         
+    public ClosedShape (double area)
+    {
+      this.area = area;
+    }
+    
+    public void setArea (double area)
+    {
+      this.area = area;
+    }
+    
+    public double getArea()
+    {
+      return area;
+    }
+  
+     public String toString()
+   {
+      String result;
+      if (area == 0)
+         result = "The area of the shape is " + area;
+      else
+            result = "The area of the two shapes are the same";
+         
+      return result;
+   }
 }
-
-public void computeC()
-//this bracket is a symbol error
-{
-      double c = (double)(a*0.5)*b;
-      return c;
-}
-
-public void setA (double a)
-{
-      this.a = a;
-}
-
-public double getA ()
-{
-      return a;
-}
-
-public void setB (double b)
-{
-      this.b = b;
-}
-
-public double getB ()
-{
-      return b;
-}
-
-//this tostring is also a symbol error and so is the getA, getB and c
-public string toString()
-{
-  return "Side A is equal to: " + getA + "Side B is equal to: " + getB 
-         + "and Side C is equal to: " + c;
-}
-}
-
-
+    
   
   
   
