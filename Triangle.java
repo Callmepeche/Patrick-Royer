@@ -1,11 +1,11 @@
 public class Triangle extends ClosedShape
 {
-     private double a, b;
+  private double a, b;
 
 public Triangle(double a, double b)
 {
-    sideA = a;
-    sideB = b;
+    this.a = a;
+    this.b = b;
 }
 
 public void computeC()
@@ -35,7 +35,7 @@ public double getB ()
 
 public string toString()
 {
-  return "Side A is equal to: " + a.getA + "Side B is equal to: " + b.getB 
+  return "Side A is equal to: " + getA + "Side B is equal to: " + getB 
          + "and Side C is equal to: " + c;
 }
 }
